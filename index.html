@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SortFlow - Interactive Sorting Algorithm Visualizer">
+
+    <meta
+        name="theme-color"
+        content="#0b1220">
+
+    <title>SortFlow Visualizer</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="sf-body">
+
+<main class="sf-page">
+
+    <!-- Header -->
+
+    <header class="sf-header">
+
+        <div class="sf-brand">
+
+            <div
+                class="sf-logo"
+                aria-hidden="true">
+                S
+            </div>
+
+            <div>
+
+                <h1>
+                    SortFlow Visualizer
+                </h1>
+
+                <p class="sf-subtitle">
+                    Visualize • Learn • Compare • Understand
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="sf-tag">
+            Sorting Made Simple
+        </div>
+
+    </header>
+
+    <!-- Intro -->
+
+    <section
+        class="sf-intro"
+        aria-labelledby="intro-title">
+
+        <h2 id="intro-title">
+            Explore Sorting, One Step at a Time
+        </h2>
+
+        <p>
+            Watch popular sorting algorithms organize
+            data through smooth visual animations.
+            Compare strategies, learn algorithm logic,
+            and build intuition step by step.
+        </p>
+
+    </section>
+
+    <!-- Controls -->
+
+    <section
+        class="sf-section"
+        aria-labelledby="controls-title">
+
+        <div class="sf-section-heading">
+
+            <h2 id="controls-title">
+                Animation Controls
+            </h2>
+
+            <p>
+                Adjust visualization speed in real-time.
+            </p>
+
+        </div>
+
+        <div class="speed-control">
+
+            <label for="speedSlider">
+                Animation Speed
+            </label>
+
+            <input
+                type="range"
+                id="speedSlider"
+                min="10"
+                max="1000"
+                step="10"
+                value="200">
+
+            <span
+                id="speedValue"
+                aria-live="polite">
+                200ms
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- Visualization -->
+
+    <section
+        class="sf-section"
+        aria-labelledby="workspace-title">
+
+        <div class="sf-section-heading">
+
+            <h2 id="workspace-title">
+                Sorting Workspace
+            </h2>
+
+            <p>
+                Watch the selected algorithm sort
+                the dataset in real time.
+            </p>
+
+        </div>
+
+        <div id="visualizer">
+
+            <!-- Robot -->
+
+            <div id="robot-panel">
+
+                <img
+                    src="bot.png"
+                    id="robot"
+                    class="robot-idle"
+                    alt="SortFlow Robot">
+
+            </div>
+
+            <!-- Robot Message -->
+
+            <div id="robotMessage">
+                Ready to Sort!
+            </div>
+
+            <!-- Status/Pseudocode -->
+
+            <div id="pseudocode">
+                Select an algorithm to begin sorting.
+            </div>
+
+            <!-- Sorting Bars -->
+
+            <div id="container"></div>
+
+            <!-- Playback Controls -->
+
+            <div class="sf-actions">
+
+                <button
+                    type="button"
+                    class="sort-btn"
+                    onclick="pauseSort()">
+
+                    ⏸ Pause
+
+                </button>
+
+                <button
+                    type="button"
+                    class="sort-btn"
+                    onclick="resumeSort()">
+
+                    ▶ Resume
+
+                </button>
+
+                <button
+                    type="button"
+                    class="sort-btn"
+                    onclick="generateArray()">
+
+                    🔄 New Array
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Algorithms -->
+
+    <section
+        class="sf-section"
+        aria-labelledby="algorithms-title">
+
+        <div class="sf-section-heading">
+
+            <h2 id="algorithms-title">
+                Choose a Sorting Algorithm
+            </h2>
+
+            <p>
+                Click any algorithm below to visualize
+                how it works.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('bubble')">
+
+                Bubble Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('selection')">
+
+                Selection Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('insertion')">
+
+                Insertion Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('merge')">
+
+                Merge Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('quick')">
+
+                Quick Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('counting')">
+
+                Counting Sort
+
+            </button>
+
+            <button
+                type="button"
+                class="sort-btn"
+                onclick="unlockAudio();startSort('radix')">
+
+                Radix Sort
+
+            </button>
+
+        </div>
+
+        <p class="sf-algorithm-note">
+
+            Compare efficiency, swaps, comparisons,
+            and sorting behavior visually.
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="sf-footer">
+
+        © 2026 SortFlow Visualizer
+
+        <br>
+
+        Learn Algorithms • Build Logic • Have Fun
+
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
